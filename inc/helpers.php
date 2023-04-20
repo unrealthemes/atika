@@ -86,13 +86,13 @@ add_filter('admin_footer_text', 'ut_remove_footer_admin');
  * Add options page ACF pro
  */ 
 
-// if ( function_exists('acf_add_options_page') ) {
-// 	acf_add_options_page([
-// 		'page_title'    => __('Настройки темы'),
-// 		'menu_title'    => __('Настройки темы'),
-// 		'menu_slug'     => 'acf-options',
-// 	]);
-// }
+if ( function_exists('acf_add_options_page') ) {
+	acf_add_options_page([
+		'page_title'    => __('Настройки темы'),
+		'menu_title'    => __('Настройки темы'),
+		'menu_slug'     => 'acf-options',
+	]);
+}
 
 
 /**
@@ -203,7 +203,7 @@ function ut_class_names( $classes ) {
 function ut_remove_product_editor() {
     remove_post_type_support( 'product', 'editor' );
 }
-add_action( 'init', 'ut_remove_product_editor' );
+// add_action( 'init', 'ut_remove_product_editor' );
 
 
 

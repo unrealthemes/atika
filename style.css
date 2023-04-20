@@ -99,3 +99,7 @@ div.wpcf7-spam-blocked::after {
     display: none;
 }
 /* END: Response cf7 */
+
+.admin-bar .header-sticky {
+    top: 32px;
+}

@@ -68,7 +68,8 @@ class UT_Theme_Helper {
 
 		register_nav_menus( [
 			'menu_1' => esc_html__( 'Header', 'unreal-theme' ),
-			'menu_2' => esc_html__( 'Footer', 'unreal-theme' ),
+			'menu_2' => esc_html__( 'Footer (left)', 'unreal-theme' ),
+			'menu_3' => esc_html__( 'Footer (right)', 'unreal-theme' ),
 		] );
 	}
 
@@ -101,9 +102,11 @@ class UT_Theme_Helper {
 
 	function load_scripts_n_styles() {
 		// ========================================= CSS ========================================= //
+		wp_enqueue_style( 'ut-swiper-css', THEME_URI . '/js/swiper-slider-7/swiper-bundle.min.css' );
+		wp_enqueue_style( 'ut-faq', THEME_URI . '/css/faq.css' );
+		wp_enqueue_style( 'ut-main', THEME_URI . '/css/style.css' );
 		wp_enqueue_style( 'ut-style', get_stylesheet_uri() );
-		// wp_enqueue_style( 'ut-example', THEME_URI . '/styles/example.css' );
-		// wp_enqueue_style( 'ut-font-awesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css' );
+
 		// ========================================= JS ========================================= //
 		//////////////////////////////////////
 		wp_deregister_script('jquery-core');
@@ -111,6 +114,8 @@ class UT_Theme_Helper {
 		wp_deregister_script('jquery');
 		wp_register_script('jquery', false, ['jquery-core'], null, true);
 		//////////////////////////////////////
+		wp_enqueue_script( 'ut-swiper', THEME_URI . '/js/swiper-slider-7/swiper-bundle.min.js', ['jquery'], date("Ymd"), true );
+		wp_enqueue_script( 'ut-faq-js', THEME_URI . '/js/faq.min.js', ['jquery'], date("Ymd"), true );
 		wp_enqueue_script( 'ut-scripts', THEME_URI . '/js/scripts.js', ['jquery'], date("Ymd"), true );
 		wp_localize_script( 
 			'ut-scripts', 
@@ -120,9 +125,9 @@ class UT_Theme_Helper {
 			] 
 		);
 
-		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-			wp_enqueue_script( 'comment-reply' );
-		}
+		// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		// 	wp_enqueue_script( 'comment-reply' );
+		// }
 		// add_filter( 'script_loader_tag', [ $this, 'add_async_defer_attr' ], 10, 3 );
 	}
 
