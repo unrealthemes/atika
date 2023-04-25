@@ -151,7 +151,7 @@ class UT_Theme_Helper {
 		include_once 'helpers.php';
 		// include_once 'class.gutenberg-blocks.php';
 		// include_once 'woo-functions.php';
-		// include_once 'disable-editor.php';
+		include_once 'disable-editor.php';
 		// include_once 'pagination.php';
 		// include_once 'walker-nav-menu.php';
 		// include_once 'class.example.php';
