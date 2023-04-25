@@ -103,3 +103,20 @@ div.wpcf7-spam-blocked::after {
 .admin-bar .header-sticky {
     top: 32px;
 }
+
+.kama_breadcrumbs {
+    margin: 0 0 25px 0;
+}
+
+.kama_breadcrumbs .kb_link a {
+    color: #1e1e1e;
+}
+
+.kama_breadcrumbs .kb_sep {
+    margin: 0 3px;
+}
+
+.wpcf7-form {
+    width: 100%;
+    max-width: 500px;
+}

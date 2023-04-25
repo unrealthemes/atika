@@ -11,6 +11,7 @@ function ut_disable_editor( $id = false ) {
 
 	$excluded_templates = array(
 		'template-home.php',
+		'template-contacts.php',
 	);
 
 	$excluded_ids = array(
@@ -51,6 +52,7 @@ add_filter( 'use_block_editor_for_post_type', 'ut_disable_gutenberg', 10, 2 );
 function ut_disable_classic_editor() {
 
 	$screen = get_current_screen();
+
 	if ( 'page' !== $screen->id || ! isset( $_GET['post'] ) )
 		return;
 
