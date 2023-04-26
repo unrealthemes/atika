@@ -30,7 +30,9 @@ $shedules = get_field('shedules_h', 'option');
 
 							<?php if ($logo_url) : ?>
 								<div class="logo mobile">
-									<img src="<?php echo esc_attr($logo_url); ?>" alt="Logo">
+									<a href="<?php echo home_url('/'); ?>">
+										<img src="<?php echo esc_attr($logo_url); ?>" alt="Logo">
+									</a>
 								</div>
 							<?php endif; ?>
 
@@ -110,7 +112,9 @@ $shedules = get_field('shedules_h', 'option');
 
 								<?php if ($logo_url) : ?>
 									<div class="logo">
-										<img src="<?php echo esc_attr($logo_url); ?>" alt="Logo">
+										<a href="<?php echo home_url('/'); ?>">
+											<img src="<?php echo esc_attr($logo_url); ?>" alt="Logo">
+										</a>
 									</div>
 								<?php endif; ?>
 
@@ -204,48 +208,4 @@ $shedules = get_field('shedules_h', 'option');
 			</div>
 		</div>
 
-		<div class="catalog_m-fixed">
-			<div class="catalog_m-block">
-				<div class="container">
-					<div class="catalog_m-block-wrapper">
-
-
-
-						<div class="catalog_m-col">
-							<div class="catalog_m-image">
-								<img src="<?php echo THEME_URI; ?>/img/Screenshot_549.jpg" alt="">
-							</div>
-							<div class="catalog_m-name">Расходники и оснастка</div>
-
-							<ul class="catalog_m-ul s1-part-1">
-								<li>Наборы инструментов</li>
-								<li>Головки торцевые и аксессуары</li>
-								<li>Ключи и наборы</li>
-								<li>Биты и аксессуары</li>
-								<li>Шарнирный инструмент</li>
-							</ul>
-
-							<div class="catalog_m-ul s1-part-2">
-								<li>Биты и аксессуары</li>
-								<li>Ключи и наборы</li>
-								<li>Головки торцевые и аксессуары</li>
-								<li>Наборы инструментов</li>
-							</div>
-
-							<div class="see s1-catalog-see">
-								Ещё 4
-								<svg data-v-41d14c6d="" width="7" height="8" viewBox="0 0 7 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="s1-catalog-see__svg"><path data-v-41d14c6d="" d="M0.5 2.5L3.5 5.5L6.5 2.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-							</div>
-
-							<div class="see s1-catalog-hide">
-								Свернуть
-								<svg data-v-41d14c6d="" width="7" height="8" viewBox="0 0 7 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="s1-catalog-see__svg-rotate"><path data-v-41d14c6d="" d="M0.5 2.5L3.5 5.5L6.5 2.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-							</div>
-						</div>
-
-
-
-					</div>
-				</div>
-			</div>
-		</div>
+		<?php get_template_part('template-parts/mega-menu'); ?>

@@ -113,7 +113,9 @@ $soc_networks = get_field('social_network_f', 'option');
 								
 								<?php if ($logo_url) : ?>
 									<div class="logo">
-										<img src="<?php echo esc_attr($logo_url); ?>" alt="Logo">
+										<a href="<?php echo home_url('/'); ?>">
+											<img src="<?php echo esc_attr($logo_url); ?>" alt="Logo">
+										</a>
 									</div>
 								<?php endif; ?>
 
