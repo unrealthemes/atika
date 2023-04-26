@@ -124,6 +124,14 @@ class UT_Theme_Helper {
 				'ajax_nonce' => wp_create_nonce( 'ut_check' ),
 			] 
 		);
+		wp_enqueue_script( 'ut-product', THEME_URI . '/js/product.js', ['jquery'], date("Ymd"), true );
+		wp_localize_script( 
+			'ut-product', 
+			'ut_product', [
+				'ajax_url' => admin_url( 'admin-ajax.php' ),
+				'ajax_nonce' => wp_create_nonce( 'ut_check' ),
+			] 
+		);
 
 		// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		// 	wp_enqueue_script( 'comment-reply' );

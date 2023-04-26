@@ -120,3 +120,8 @@ div.wpcf7-spam-blocked::after {
     width: 100%;
     max-width: 500px;
 }
+
+.catalog_m-name a,
+.catalog_m-ul li a {
+    color: #1e1e1e;
+}
