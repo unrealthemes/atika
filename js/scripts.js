@@ -6,6 +6,13 @@ jQuery(document).ready(function($) {
 	});
 });
 
+/* Cart Hover */
+// jQuery(document).ready(function($) {
+// 	$('.cart').click(function(event) {
+// 		$('.cart, .cart-popup').toggleClass('active');
+// 	});
+// });
+
 
 jQuery(document).ready(function($) {
 
@@ -392,6 +399,76 @@ new Swiper('.swiper-4', {
 
 
 
+// Swiper Slider
+new Swiper('.swiper-productImgMini', {
+	// Navigation arrows
+	navigation: {
+		nextEl: '.swiper-productImgMini-n',
+		prevEl: '.swiper-productImgMini-p',
+	},
+
+	pagination: {
+		el: '.swiper-pagination-productImgMini',
+		// Bullet
+		clickable: true,
+		dynamicBullets: true,
+	},
+
+	direction: 'vertical',
+
+	/* Количество слайдов для показа */
+	slidesPerView: 4,
+	
+	/* Количество пролистываемых слайдов */
+	slidesPerGroup: 1,
+
+	/* Отступ между слайдами */
+	spaceBetween: 10,
+
+	loop: true,
+	// effect: "fade",
+
+	// autoplay: {
+	// 	delay: 1000,
+	// 	disableOnInteraction: false,
+	// },
+	
+	breakpoints: {
+		0: {
+			slidesPerView: '4',
+			spaceBetween: 10,
+		},
+
+		480: {
+			slidesPerView: '4',
+			spaceBetween: 10,
+		},
+
+		768: {
+			slidesPerView: '4',
+			spaceBetween: 10,
+		},
+
+		992: {
+			slidesPerView: '4',
+			spaceBetween: 10,
+		},
+
+		1199: {
+			slidesPerView: '4',
+			spaceBetween: 10,
+		},
+
+		1399: {
+			slidesPerView: '4',
+			spaceBetween: 10,
+		},
+   },
+
+});
+
+
+/* Scroll Top */
 var header_top = $('.header-top'),
 scrollPrev = 0;
 
