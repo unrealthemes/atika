@@ -6,6 +6,12 @@ let PRODUCT = {
 
         // PRODUCT.save_form();
         PRODUCT.update_qty();
+
+        $('.c-sort div').on('click', function(event){
+            event.preventDefault();
+            var selected = $(this).data('orderby');
+            $('select[name="orderby"]').val(selected).change();
+        });
     },
 
     update_qty: function update_qty() {

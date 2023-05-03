@@ -19,6 +19,15 @@ class UT_Product {
         remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
         remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
+        add_action('pre_get_posts', [$this, 'filter_pre_get_post']);
+    }
+
+    public function filter_pre_get_post( $query ) {
+
+        if ( (is_shop() || is_tax()) && ! is_admin() && ! $query->is_single && $query->is_main_query() ) {
+    
+            $query->set( 'posts_per_page', get_option( 'posts_per_page' ) );  
+        }
     }
 
 } 

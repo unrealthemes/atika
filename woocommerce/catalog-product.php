@@ -30,25 +30,25 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<div <?php wc_product_class( 'swiper-slide newp-col', $product ); ?>>
 
-    <a href="<?php echo get_permalink( $product->get_id() ); ?>">
-        <img class="newp-col-img" src="<?php echo $img_url; ?>" alt="<?php echo $product->get_name(); ?>">
-    </a>
-    <div class="newp-group-brand">
+<div <?php wc_product_class( 'tool-col', $product ); ?>>
+    <a class="c-group-link" href="<?php echo get_permalink( $product->get_id() ); ?>">
 
-        <div class="newp-brand-name">Matur</div>
-
-        <?php if ($product->get_sku()) : ?>
-            <div class="newp-articul-number">
+        <?php // if ($product->get_sku()) : ?>
+            <div class="product-num">
                 <?php echo $product->get_sku(); ?>
             </div>
-        <?php endif; ?>
+        <?php // endif; ?>
 
-    </div>
-    <div class="newp-col-name">
-        <?php echo $product->get_name(); ?>
-    </div>
+        <img class="tool-col-img" src="<?php echo $img_url; ?>" alt="<?php echo $product->get_name(); ?>">
+        <div class="tool-col-name"><?php echo $product->get_name(); ?></div>
+    </a>
+
+    <?php if ($product->get_stock_quantity()) : ?>
+        <div class="tool-count">
+            <?php echo $product->get_stock_quantity(); ?> шт.
+        </div>
+    <?php endif; ?>
 
     <?php woocommerce_template_loop_price(); ?>
 
@@ -94,6 +94,6 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	// do_action( 'woocommerce_after_shop_loop_item_title' );
 	?>
 
-	<?php wc_get_template_part( 'single-product/discount' ); ?>
+    <?php wc_get_template_part( 'single-product/discount' ); ?>
 
 </div>

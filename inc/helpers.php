@@ -279,3 +279,30 @@ function ut_custom_login_url( $url ) {
     return home_url();
 }
 // add_filter( 'login_headerurl', 'ut_custom_login_url' );
+
+
+
+
+function ut_kama_breadcrumbs_args( $args ) {
+	
+	$my_args = [
+		'sep' => '>',
+		'priority_tax' => [ 'product_cat' ],
+	];
+	
+	return $my_args + $args;
+}
+add_filter( 'kama_breadcrumbs_args', 'ut_kama_breadcrumbs_args' );
+
+
+
+
+function ut_breadcrumbs_change_elements( $elms, $class, $ptype ) {
+
+	global $post;
+	
+	$elms['home_after'] = [];
+	
+	return $elms;
+}
+add_filter( 'kama_breadcrumbs_filter_elements', 'ut_breadcrumbs_change_elements', 10, 3 );

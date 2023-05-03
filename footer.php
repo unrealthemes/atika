@@ -146,15 +146,15 @@ $soc_networks = get_field('social_network_f', 'option');
 								?>
 
 								<?php
-								if ( has_nav_menu('menu_3') ) {
-									wp_nav_menu( [
-										'theme_location' => 'menu_3',
-										'container'      => false,
-										'menu_class'     => 'footer-nav-list-2',
-										// 'walker'         => new UT_Mega_Menu(),
-										'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-									] );
-								}
+								// if ( has_nav_menu('menu_3') ) {
+								// 	wp_nav_menu( [
+								// 		'theme_location' => 'menu_3',
+								// 		'container'      => false,
+								// 		'menu_class'     => 'footer-nav-list-2',
+								// 		// 'walker'         => new UT_Mega_Menu(),
+								// 		'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+								// 	] );
+								// }
 								?>
 
 							</div>
