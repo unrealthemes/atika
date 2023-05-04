@@ -34,6 +34,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     <?php 
     foreach ( $catalog_orderby_options as $id => $name ) : 
+        
+        if ( $id == 'menu_order' || $id == 'popularity' || $id == 'rating' ) { 
+            continue;
+        }
         $active_class = ($orderby == $id) ? 'c-active' : 'c-price';
     ?>
 

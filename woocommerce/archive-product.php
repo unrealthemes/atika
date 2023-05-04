@@ -268,7 +268,7 @@ else :
 
                         </div>
 
-                        <div class="tool-group-1">
+                        <div class="tool-group-1 first">
                             <div class="tool-col head">
                                 <div class="product-num">Код</div>
                                 <div class="tool-col-img-block">Фото</div>
@@ -278,38 +278,37 @@ else :
                                 <div class="newp-cart-d">Кол-во</div>
                                 <div class="newp-add-cart"></div>
                             </div>
-
-                            <?php 
-                            if ( woocommerce_product_loop() ) {
-                            
-                                // woocommerce_product_loop_start();
-                            
-                                if ( wc_get_loop_prop( 'total' ) ) {
-                                    while ( have_posts() ) {
-                                        the_post();
-                            
-                                        /**
-                                        * Hook: woocommerce_shop_loop.
-                                        */
-                                        do_action( 'woocommerce_shop_loop' );
-                            
-                                        wc_get_template_part( 'catalog', 'product' );
-                                    }
-                                }
-                            
-                                // woocommerce_product_loop_end();
-                            
-                            } else {
-                                /**
-                                * Hook: woocommerce_no_products_found.
-                                *
-                                * @hooked wc_no_products_found - 10
-                                */
-                                do_action( 'woocommerce_no_products_found' );
-                            }
-                            ?>
-
                         </div>
+
+                        <?php 
+                        if ( woocommerce_product_loop() ) {
+                        
+                            woocommerce_product_loop_start();
+                        
+                            if ( wc_get_loop_prop( 'total' ) ) {
+                                while ( have_posts() ) {
+                                    the_post();
+                        
+                                    /**
+                                    * Hook: woocommerce_shop_loop.
+                                    */
+                                    do_action( 'woocommerce_shop_loop' );
+                        
+                                    wc_get_template_part( 'content', 'product' );
+                                }
+                            }
+                        
+                            woocommerce_product_loop_end();
+                        
+                        } else {
+                            /**
+                            * Hook: woocommerce_no_products_found.
+                            *
+                            * @hooked wc_no_products_found - 10
+                            */
+                            do_action( 'woocommerce_no_products_found' );
+                        }
+                        ?>
 
                         <?php 
                         /**

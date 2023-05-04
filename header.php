@@ -15,7 +15,7 @@ $shedules = get_field('shedules_h', 'option');
 </head>
 <body <?php body_class(); ?>>
 
-	<?php wp_body_open(); ?>
+	<?php wp_body_open(); ?> 
 
 	<div class="wrapper">
 		<header class="header header-sticky">
@@ -140,18 +140,22 @@ $shedules = get_field('shedules_h', 'option');
 							</div>
 
 							<div class="cart">
-								<a class="cart__link" href="busket.html">
+								<a class="cart__link" href="<?php echo esc_url( wc_get_cart_url() ); ?>">
 									<img src="<?php echo THEME_URI; ?>/img/busket_s.png" alt="">
 									<span>Корзина</span>
+									<?php wc_get_template_part( 'cart/cart-count' ); ?>
 								</a>
+								<?php wc_get_template_part( 'cart/mini-cart' ); ?>
 							</div>
 
-							<div class="user-profile">
-								<a class="user-profile__link" href="#">
-									<img src="<?php echo THEME_URI; ?>/img/enter_s.png" alt="">
-									<span>Вход</span>
-								</a>
-							</div>
+							<?php if ( ! is_user_logged_in() ) : ?>
+								<div class="user-profile">
+									<a class="user-profile__link" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
+										<img src="<?php echo THEME_URI; ?>/img/enter_s.png" alt="<?php _e('My Account',''); ?>">
+										<span>Вход</span>
+									</a>
+								</div>
+							<?php endif; ?>
 
 						</div>
 

@@ -19,36 +19,44 @@ defined( 'ABSPATH' ) || exit;
 
 global $product;
 
+// Ensure visibility.
+if ( empty( $product ) || ! $product->is_visible() ) {
+	return;
+}
+
 $img_url = get_the_post_thumbnail_url( $product->get_id(), 'medium' );
 
 if ( ! $img_url ) {
     $img_url = wc_placeholder_img_src();
 }
 
-// Ensure visibility.
-if ( empty( $product ) || ! $product->is_visible() ) {
-	return;
-}
+$brands = wc_get_product_terms( $product->get_id(), 'brand' );
 ?>
+<div <?php wc_product_class( 'swiper-slide newp-col', $product ); ?>>
 
-<div <?php wc_product_class( 'tool-col', $product ); ?>>
-    <a class="c-group-link" href="<?php echo get_permalink( $product->get_id() ); ?>">
+    <a href="<?php echo get_permalink( $product->get_id() ); ?>">
+        <img class="newp-col-img" src="<?php echo $img_url; ?>" alt="<?php echo $product->get_name(); ?>">
+    </a>
+    <div class="newp-group-brand">
 
-        <?php // if ($product->get_sku()) : ?>
-            <div class="product-num">
+		<?php if ($brands) : ?>
+			<?php foreach ($brands as $brand) : ?>
+				<div class="newp-brand-name">
+					<?php echo esc_html($brand->name); ?>
+				</div>
+			<?php endforeach; ?>
+		<?php endif; ?>
+
+        <?php if ($product->get_sku()) : ?>
+            <div class="newp-articul-number">
                 <?php echo $product->get_sku(); ?>
             </div>
-        <?php // endif; ?>
+        <?php endif; ?>
 
-        <img class="tool-col-img" src="<?php echo $img_url; ?>" alt="<?php echo $product->get_name(); ?>">
-        <div class="tool-col-name"><?php echo $product->get_name(); ?></div>
-    </a>
-
-    <?php if ($product->get_stock_quantity()) : ?>
-        <div class="tool-count">
-            <?php echo $product->get_stock_quantity(); ?> шт.
-        </div>
-    <?php endif; ?>
+    </div>
+    <div class="newp-col-name">
+        <?php echo $product->get_name(); ?>
+    </div>
 
     <?php woocommerce_template_loop_price(); ?>
 
@@ -94,6 +102,6 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	// do_action( 'woocommerce_after_shop_loop_item_title' );
 	?>
 
-    <?php wc_get_template_part( 'single-product/discount' ); ?>
+	<?php wc_get_template_part( 'single-product/discount' ); ?>
 
 </div>

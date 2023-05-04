@@ -15,6 +15,7 @@ class UT_Theme_Helper {
   	private static $_instance = null;
 
   	public $product;
+  	public $cart;
 	//   public $guneberg_blocks;
 
   	private function __construct() {
@@ -49,6 +50,7 @@ class UT_Theme_Helper {
 	function load_classes() {
 
 		$this->product = UT_Product::get_instance();
+		$this->cart = UT_Cart::get_instance();
 		// $this->guneberg_blocks = UT_Guneberg_Blocks::get_instance();
 	}
 
@@ -163,6 +165,7 @@ class UT_Theme_Helper {
 		// include_once 'pagination.php';
 		// include_once 'walker-nav-menu.php';
 		include_once 'class.product.php';
+		include_once 'class.cart.php';
 	}
 
 }
