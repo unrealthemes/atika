@@ -34,14 +34,14 @@ $count_products = WC()->cart->get_cart_contents_count();
                 <div class="busket-catalog-list-flex">
                     <?php the_title('<div class="busket-title-1">','</div>'); ?>
 
-                    <button class="header-button">
-                        <a href="#">Очистить корзину</a>
-                    </button>
+                    <div class="clear-button">
+                        <a id="prowc_empty_cart" href="<?php echo home_url('/cart/?prowc_empty_cart'); ?>">Очистить корзину</a>
+                    </div>
                 </div>
 
                 <?php do_action( 'woocommerce_before_cart_table' ); ?>
 
-                <div class="busket-section-1">
+                <div class="busket-section-1" style="margin-bottom:0px;">
                     <div class="busket-catalog-col-2 lines">
                         <div class="busket-tool-group-1">
                             <div class="busket-head">
@@ -203,6 +203,21 @@ $count_products = WC()->cart->get_cart_contents_count();
                         <div class="busket-full-price">
                             Итого: <?php echo $count_position_txt; ?>, <?php echo $count_products_txt; ?> на: <?php wc_cart_totals_order_total_html(); ?>
                         </div>
+
+                        <?php if ( ! is_checkout() ) : ?>
+                            <div class="form-busket-block popup-form">
+                                <div class="form-busket-col">
+                                    <div class="row cf7-send-wrapper">
+                                        <div class="col cf7-send">
+                                            <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="form-control has-spinner wpcf7-submit">
+                                                К оформлению заказа
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+
                     </div>
                 </div>
 

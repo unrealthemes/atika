@@ -19,15 +19,15 @@ defined( 'ABSPATH' ) || exit;
 
 global $product;
 
+// Ensure visibility.
+if ( empty( $product ) || ! $product->is_visible() ) {
+	return;
+}
+
 $img_url = get_the_post_thumbnail_url( $product->get_id(), 'medium' );
 
 if ( ! $img_url ) {
     $img_url = wc_placeholder_img_src();
-}
-
-// Ensure visibility.
-if ( empty( $product ) || ! $product->is_visible() ) {
-	return;
 }
 ?>
 

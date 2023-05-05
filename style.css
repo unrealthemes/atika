@@ -197,6 +197,7 @@ div.wpcf7-spam-blocked::after {
 }
 
 .col-2,
+#customer_details,
 #billing_country_field,
 .woocommerce-terms-and-conditions-wrapper,
 .woocommerce-checkout #payment ul.payment_methods,
@@ -267,6 +268,101 @@ nav.prdctfltr-pagination.prdctfltr-pagination-load-more .button {
 
 .form-row.place-order {
     padding: 0px !important;
+}
+
+a.form-control.has-spinner.wpcf7-submit {
+    text-align: center;
+}
+
+.clear-button {
+    background: none;
+    border: 1px solid #fd8f37;
+    border-radius: 5px;
+    /* width: 150px; */
+    /* height: 30px; */
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    transition: all 0.1s ease 0s;
+}
+
+.busket .clear-button a {
+    display: block;
+    background: #fd8f37;
+    color: #1e1e1e;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 3px 5px 3px 5px;
+}
+
+.clear-button:hover {
+    opacity: .7;
+}
+
+#myPopup .wpcf7-form {
+    display: inline;
+}
+
+#myPopup .wpcf7-form-control {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    padding: 16px;
+    border: 1px solid #21283566;
+    border: 1px solid #ccd0d7;
+    border-radius: 3px;
+    box-shadow: none;
+    width: 100%;
+    display: block;
+    outline: none;
+}
+
+.wpcf7-radio,
+.wpcf7-file {
+    border: none !important;
+    resize: none !important;
+} 
+
+.soc-link-row .wpcf7-list-item .wpcf7-list-item-label {
+    width: 35px;
+    height: 35px;
+    display: block;
+    cursor: pointer;
+    font-size: 0px;
+}
+
+.soc-link-row .wpcf7-list-item.first .wpcf7-list-item-label {
+    background-image: url('img/icons8-whatsapp-48.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.soc-link-row .wpcf7-list-item.last .wpcf7-list-item-label {
+    background-image: url('img/icons8-telegramma-app-48.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.soc-link-row .wpcf7-list-item input {
+/* .soc-link-row .wpcf7-list-item .wpcf7-list-item-label { */
+    display: none;
+}
+
+.soc-link-row .wpcf7-list-item input:checked + .wpcf7-list-item-label {
+    opacity: 0.5;
+    box-shadow: 0px 0px 8px 2px #000000;
+    border-radius: 50%;
+}
+
+.soc-link-row .wpcf7-radio {
+    display: flex;
+}
+
+.search-button {
+    border: none;
+}
+
+.search.search-results {
+    overflow: auto;
 }
 
 /* .add_to_cart_button.ajax_add_to_cart.added {

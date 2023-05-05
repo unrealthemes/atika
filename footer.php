@@ -9,97 +9,9 @@ $address = get_field('address_f', 'option');
 $soc_networks = get_field('social_network_f', 'option');
 ?>
 
-		<?php // get_template_part('template-parts/modals/..'); ?>
+		<?php get_template_part('template-parts/modals/contact-form'); ?>
 
-		<div class="myPopup-1" id="myPopup">
-			<div class="popup-block">
-
-				<div class="close-button">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
-				</div>
-
-				<div class="form-name">Оставьте заявку</div>
-
-				<div class="popup-form">
-
-					<span class="form-control-wrap" data-name="your-name">
-						<input size="40" class="form-control text validates-as-required" autocomplete="name" aria-required="true" aria-invalid="false" placeholder="Имя" value="" type="text" name="your-name">
-					</span>
-
-					<span class="form-control-wrap" data-name="your-company">
-						<input size="40" class="form-control text validates-as-required" autocomplete="company" aria-required="true" aria-invalid="false" placeholder="Компания" value="" type="text" name="your-company">
-					</span>
-
-					<span class="form-control-wrap" data-name="tel-669">
-						<input size="40" class="form-control text tel validates-as-tel" aria-invalid="false" placeholder="+___ (__) ___-__-__" value="" type="tel" name="tel-669">
-					</span>
-
-					<span class="form-control-wrap" data-name="your-message">
-						<textarea cols="40" rows="10" class="form-control textarea" aria-invalid="false" placeholder="Ваше сообщение" name="your-message"></textarea>
-					</span>
-
-					<div class="form-control-wrap file-social-group">
-						<span data-name="your-file">
-							<input type="file" name="f">
-						</span>
-
-						<div class="soc-link-row">
-							<div class="soc-link f-soc-whatsapp">
-								<a href="#">
-									<img src="<?php echo THEME_URI; ?>/img/icons8-whatsapp-48.png">
-								</a>
-							</div>
-
-							<div class="soc-link f-soc-telegram">
-								<a href="#">
-									<img src="<?php echo THEME_URI; ?>/img/icons8-telegramma-app-48.png">
-								</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="c-submit">
-						<input class="form-control has-spinner submit" type="submit" value="Отправить заявку">
-					</div>
-
-				</div>
-
-			</div>
-		</div>
-
-		<div class="myPopup-2" id="myPopup-2">
-			<div class="popup-block">
-
-				<div class="close-button">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"></path></svg>
-				</div>
-
-				<div class="form-name">Вход</div>
-
-				<div class="popup-form">
-
-					<span class="form-control-wrap" data-name="your-email">
-						<input size="40" class="form-control text email validates-as-required validates-as-email" aria-required="true" aria-invalid="false" placeholder="E-mail" value="" type="email" name="your-email">
-					</span>
-
-					<span class="form-control-wrap" data-name="your-password">
-						<input size="40" class="form-control text password validates-as-required validates-as-password" autocomplete="password" aria-required="true" aria-invalid="false" placeholder="Пароль" value="" type="password" name="your-password">
-					</span>
-
-					<div class="lost-pass">
-						<a href="#">Забыли пароль?</a>
-					</div>
-
-					<div class="c-submit">
-						<input class="form-control has-spinner submit" type="submit" value="Войти">
-					</div>
-
-					<div class="lost-reg">Нет аккаунта? <a href="#">Зарегистрируйтесь тут</a>.</div>
-
-				</div>
-
-			</div>
-		</div>
+		<?php get_template_part('template-parts/modals/login-form'); ?>
 
 		<footer class="footer">
 			<div class="footer-wrapper">

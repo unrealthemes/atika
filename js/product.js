@@ -13,6 +13,24 @@ let PRODUCT = {
             $('select[name="orderby"]').val(selected).change();
         });
 
+
+        PRODUCT.field_autocomplete('#checkout_first_name', '#billing_first_name');
+        PRODUCT.field_autocomplete('#checkout_last_name', '#billing_last_name');
+        PRODUCT.field_autocomplete('#checkout_company', '#billing_company');
+        PRODUCT.field_autocomplete('#checkout_email', '#billing_email');
+        PRODUCT.field_autocomplete('#checkout_phone', '#billing_phone');
+        PRODUCT.field_autocomplete('#checkout_address', '#billing_address_1');
+        PRODUCT.field_autocomplete('#checkout_comment', '#order_comments');
+
+    },
+
+    field_autocomplete: function field_autocomplete($from, $to) {
+
+        $($from).keyup(function() {
+            var input = this.value;
+            $($to).val(input);
+            console.log(input);
+        });
     },
 
     update_cart: function update_cart() {

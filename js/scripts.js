@@ -54,9 +54,9 @@ jQuery(document).ready(function($) {
 		$(this).wrap('<div class="inputwrapper"></div>').before('<span>'+placeholder+'</span>');
 		$(this).on('focus',function(){
 			var inputContent = $(this).val();
-			if(inputContent == ''){
+			// if(inputContent == ''){
 				$(this).prev().addClass('visible');
-			}
+			// }
 
 		});
 		$(this).on('blur',function(){
@@ -65,6 +65,11 @@ jQuery(document).ready(function($) {
 				$(this).prev().removeClass('visible');
 			}
 		});
+
+		if ( $(this).hasClass('form-control') && $(this).val() != '' ) {
+			$(this).prev().addClass('visible');
+		}
+
 	});
 
 	/* Модальное окно открытие / закрытие */
