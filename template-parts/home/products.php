@@ -42,7 +42,7 @@ $products = get_field('products_h');
 
                     <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-                        <?php wc_get_template_part( 'content', 'product' ); ?>
+                        <?php wc_get_template_part( 'slider', 'product' ); ?>
 
                     <?php endwhile; ?>
 

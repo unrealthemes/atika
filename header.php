@@ -15,7 +15,7 @@ $shedules = get_field('shedules_h', 'option');
 </head>
 <body <?php body_class(); ?>>
 
-	<?php wp_body_open(); ?>
+	<?php wp_body_open(); ?> 
 
 	<div class="wrapper">
 		<header class="header header-sticky">
@@ -135,23 +135,33 @@ $shedules = get_field('shedules_h', 'option');
 							</div>
 
 							<div class="search">
-								<input type="search" id="wp-block-search__input-2" class="wp-block-search__input wp-block-search__input " name="s" value="" placeholder="Поиск по товарам" required="">
-								<div class="search-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></div>
-							</div>
+								<form role="search" method="get" action="<?php echo home_url('/'); ?>">
+									<input type="search" id="wp-block-search__input-2" class="wp-block-search__input wp-block-search__input " name="s" value="<?php echo get_search_query(); ?>" placeholder="Поиск по товарам" required> 
+									<button type="submit" class="search-button">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+											<path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
+										</svg>
+									</button>
+								</form>
+							</div> 
 
 							<div class="cart">
-								<a class="cart__link" href="busket.html">
+								<a class="cart__link" href="<?php echo esc_url( wc_get_checkout_url() ); ?>">
 									<img src="<?php echo THEME_URI; ?>/img/busket_s.png" alt="">
 									<span>Корзина</span>
+									<?php wc_get_template_part( 'cart/cart-count' ); ?>
 								</a>
+								<?php wc_get_template_part( 'cart/mini-cart' ); ?>
 							</div>
 
-							<div class="user-profile">
-								<a class="user-profile__link" href="#">
-									<img src="<?php echo THEME_URI; ?>/img/enter_s.png" alt="">
-									<span>Вход</span>
-								</a>
-							</div>
+							<?php if ( ! is_user_logged_in() ) : ?>
+								<div class="user-profile">
+									<a class="user-profile__link" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
+										<img src="<?php echo THEME_URI; ?>/img/enter_s.png" alt="<?php _e('My Account',''); ?>">
+										<span>Вход</span>
+									</a>
+								</div>
+							<?php endif; ?>
 
 						</div>
 
