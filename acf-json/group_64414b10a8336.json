@@ -315,6 +315,26 @@
             ]
         },
         {
+            "key": "field_645a321a48c0f",
+            "label": "Копирайт",
+            "name": "copyright_f",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6454d9330858b",
             "label": "Всплывающие окна",
             "name": "",
@@ -392,5 +412,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683282803
+    "modified": 1683632989
 }

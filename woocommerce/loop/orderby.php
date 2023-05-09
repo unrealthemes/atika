@@ -38,11 +38,20 @@ if ( ! defined( 'ABSPATH' ) ) {
         if ( $id == 'menu_order' || $id == 'popularity' || $id == 'rating' ) { 
             continue;
         }
+
         $active_class = ($orderby == $id) ? 'c-active' : 'c-price';
+
+        if ( $id == 'price' ) {
+            $label = 'По цене ▲';
+        } else if ( $id == 'price-desc' ) {
+            $label = 'По цене ▼';
+        } else {
+            $label = $name;
+        }
     ?>
 
         <div data-orderby="<?php echo esc_attr( $id ); ?>" class="<?php echo $active_class; ?>">
-            <?php echo esc_html( $name ); ?>
+            <?php echo esc_html($label); ?>
         </div>
 
     <?php endforeach; ?>

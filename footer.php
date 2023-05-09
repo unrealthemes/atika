@@ -7,6 +7,7 @@ $shedules = get_field('shedules_f', 'option');
 $mail = get_field('mail_f', 'option');
 $address = get_field('address_f', 'option');
 $soc_networks = get_field('social_network_f', 'option');
+$copyright = get_field('copyright_f', 'option');
 ?>
 
 		<?php get_template_part('template-parts/modals/contact-form'); ?>
@@ -38,8 +39,14 @@ $soc_networks = get_field('social_network_f', 'option');
 								<?php endif; ?>
 
 								<div class="copy-block">
-									© <?php the_date('Y'); ?>, «Атика». Все права защищены. 
-									<span>Использование любых материалов, размещённых на сайте, разрешается при условии ссылки на «Атика».</span>
+									© <?php the_date('Y'); ?>, «<?php echo get_bloginfo('name'); ?>». Все права защищены. 
+
+									<?php if ($copyright) : ?>
+										<span>
+											<?php echo esc_html($copyright); ?>
+										</span>
+									<?php endif; ?>
+
 								</div>
 							</div>
 
@@ -120,7 +127,7 @@ $soc_networks = get_field('social_network_f', 'option');
 									<?php endif; ?>
 
 								</div>
-
+ 
 								<?php if ( $soc_networks ) : ?>
 									<div class="soc-link-row">
 										<?php 

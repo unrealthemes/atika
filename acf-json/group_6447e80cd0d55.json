@@ -162,6 +162,75 @@
                     "media_upload": 0,
                     "delay": 0,
                     "parent_repeater": "field_6447f5ba4772e"
+                },
+                {
+                    "key": "field_6459f0cb44dd4",
+                    "label": "Соц. сети",
+                    "name": "social_network_items_c",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Добавить",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_6459f12d44dd5",
+                            "label": "Изображение",
+                            "name": "img_social_network_items_c",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "id",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "medium",
+                            "parent_repeater": "field_6459f0cb44dd4"
+                        },
+                        {
+                            "key": "field_6459f15244dd6",
+                            "label": "Ссылка",
+                            "name": "link_social_network_items_c",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "80",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "parent_repeater": "field_6459f0cb44dd4"
+                        }
+                    ],
+                    "parent_repeater": "field_6447f5ba4772e"
                 }
             ]
         },
@@ -348,5 +417,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682443274
+    "modified": 1683616152
 }

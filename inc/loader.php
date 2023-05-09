@@ -87,6 +87,7 @@ class UT_Theme_Helper {
 			'caption',
 		] );
 		add_theme_support( 'woocommerce' );
+		add_image_size( 'megamenu', 55, 55, true );
 	}
 
 	// public function widgets_init() {

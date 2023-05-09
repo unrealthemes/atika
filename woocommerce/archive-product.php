@@ -147,7 +147,14 @@ do_action( 'woocommerce_before_main_content' );
 else : 
     $parent_category = get_term_by( 'id', $category_obj->parent, $category_obj->taxonomy );
     $parent_term_link = get_term_link($parent_category->term_id, $parent_category->taxonomy);
-    // $child_categories = get_terms( $parent_category->taxonomy, [ 'parent' => $parent_category->term_id, 'orderby' => 'slug', 'hide_empty' => 0 ] );
+    $child_categories = get_terms( 
+        $parent_category->taxonomy, 
+        [ 
+            'parent' => $parent_category->term_id, 
+            'orderby' => 'slug', 
+            'hide_empty' => 0 
+        ] 
+    );
 ?>
 
     <div class="main-section category">
@@ -178,23 +185,23 @@ else :
 
                     <div class="catalog-col-1">
 
-                        <?php // if ( $child_categories ) : ?>
-                            <!-- <ul class="catalog-list">
+                        <?php if ( $child_categories ) : ?>
+                            <ul class="catalog-list">
 
                                 <?php 
-                                // foreach ($child_categories as $child_category) : 
-                                    // $child_term_link = get_term_link($child_category->term_id, $child_category->taxonomy);
-                                    // if ( $child_category->term_id == $category_obj->term_id ) continue;
+                                foreach ($child_categories as $child_category) : 
+                                    $child_term_link = get_term_link($child_category->term_id, $child_category->taxonomy);
+                                    if ( $child_category->term_id == $category_obj->term_id ) continue;
                                 ?>
                                     <li class="catalog-list-inner">
-                                        <a href="<?php // echo esc_url($child_term_link); ?>">
-                                            <?php // echo esc_html($child_category->name); ?>
+                                        <a href="<?php echo esc_url($child_term_link); ?>">
+                                            <?php echo esc_html($child_category->name); ?>
                                         </a>
                                     </li>
-                                <?php // endforeach; ?>
+                                <?php endforeach; ?>
 
-                            </ul> -->
-                        <?php // endif; ?> 
+                            </ul>
+                        <?php endif; ?> 
 
                         <?php do_action( 'ut_main_filter_options' ); ?>
 

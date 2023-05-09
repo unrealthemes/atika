@@ -34,9 +34,9 @@ $brands = wc_get_product_terms( $product->get_id(), 'brand' );
 ?>
 <div <?php wc_product_class( 'swiper-slide newp-col', $product ); ?>>
 
-    <a href="<?php echo get_permalink( $product->get_id() ); ?>">
+    <!-- <a href="<?php // echo get_permalink( $product->get_id() ); ?>"> -->
         <img class="newp-col-img" src="<?php echo $img_url; ?>" alt="<?php echo $product->get_name(); ?>">
-    </a>
+    <!-- </a> -->
     <div class="newp-group-brand">
 
 		<?php if ($brands) : ?>
@@ -55,7 +55,9 @@ $brands = wc_get_product_terms( $product->get_id(), 'brand' );
 
     </div>
     <div class="newp-col-name">
-        <?php echo $product->get_name(); ?>
+		<a href="<?php echo get_permalink( $product->get_id() ); ?>">
+			<?php echo $product->get_name(); ?>
+		</a>
     </div>
 
     <?php woocommerce_template_loop_price(); ?>

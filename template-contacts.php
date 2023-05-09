@@ -58,6 +58,7 @@ if (have_posts()) :
                                     <?php 
                                     foreach ($items as $item) : 
                                         $val = str_replace(['<p>', '</p>'], '', $item['val_items_c']);
+                                        $soc_networks = $item['social_network_items_c'];
                                     ?>
                                         <div class="c-line contact-mail">
 
@@ -66,7 +67,29 @@ if (have_posts()) :
                                             <?php endif; ?>
 
                                             <?php echo $val; ?>
+
+                                            <?php if ( $soc_networks ) : ?>
+                                 
+                                                <?php 
+                                                foreach ( $soc_networks as $key => $soc_network ) : 
+                                                    $soc_class = ($key == 0) ? 'soc-whatsapp' : 'soc-telegram';
+                                                    $icon_url = wp_get_attachment_url( $soc_network['img_social_network_items_c'], 'full' );
+                                                ?>
+                                                    <div class="soc-link <?php echo $soc_class; ?>">
+                                                        <a href="<?php echo esc_url($soc_network['link_social_network_items_c']); ?>" target="_blank">
+
+                                                            <?php if ($icon_url) : ?>
+                                                                <img src="<?php echo esc_attr($icon_url); ?>">
+                                                            <?php endif; ?>
+
+                                                        </a>
+                                                    </div>
+                                                <?php endforeach; ?>
+                                            
+                                            <?php endif; ?>
+
                                         </div>
+
                                     <?php endforeach; ?>
 
                                     <!-- <div class="soc-link soc-whatsapp">

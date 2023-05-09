@@ -36,7 +36,7 @@ Text Domain: unreal-themes
     font-size: 15px;
     border: none;
     position: relative;
-    margin: 10px 0 0 0;
+    margin: 10px 35px;
     border-radius: 5px;
     text-align: justify;
 }
@@ -48,7 +48,7 @@ Text Domain: unreal-themes
     font-size: 15px;
     border: none;
     position: relative;
-    margin: 10px 0 0 0;
+    margin: 10px 35px;
     border-radius: 5px;
     text-align: justify;
 }
@@ -60,7 +60,7 @@ div.wpcf7-spam-blocked {
     font-size: 15px;
     border: none;
     position: relative;
-    margin: 10px 0 0 0;
+    margin: 10px 35px;
     border-radius: 5px;
     text-align: justify;
 }
@@ -364,6 +364,24 @@ a.form-control.has-spinner.wpcf7-submit {
 .search.search-results {
     overflow: auto;
 }
+
+.button.add_to_cart_button.ajax_add_to_cart.loading {
+    padding: 0 !important;
+}
+
+.button.add_to_cart_button.ajax_add_to_cart::after {
+    content: none !important;
+    display: none !important;
+}
+
+.newp-col-name a {
+    color: #1e1e1e;
+}
+
+.catalog_m-image img {
+    /* width: 55px; */
+    height: 55px;
+ }
 
 /* .add_to_cart_button.ajax_add_to_cart.added {
 
