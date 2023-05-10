@@ -7,6 +7,8 @@ let PRODUCT = {
         PRODUCT.update_qty();
         PRODUCT.update_cart();
 
+        $('input[type="tel"]').inputmask("+7 (999) 999-99-99", {clearMaskOnLostFocus : false});
+
         $('.c-sort div').on('click', function(event){
             event.preventDefault();
             var selected = $(this).data('orderby');
@@ -14,7 +16,6 @@ let PRODUCT = {
             $('.c-sort div.c-active').removeClass('c-active').addClass('c-price');
             $(this).removeClass('c-price').addClass('c-active');
         });
-
 
         PRODUCT.field_autocomplete('#checkout_first_name', '#billing_first_name');
         PRODUCT.field_autocomplete('#checkout_last_name', '#billing_last_name');
@@ -60,7 +61,6 @@ let PRODUCT = {
         $($from).keyup(function() {
             var input = this.value;
             $($to).val(input);
-            console.log(input);
         });
     },
 

@@ -117,6 +117,7 @@ class UT_Theme_Helper {
 		wp_deregister_script('jquery');
 		wp_register_script('jquery', false, ['jquery-core'], null, true);
 		//////////////////////////////////////
+		wp_enqueue_script( 'ut-inputmask', THEME_URI . '/js/jquery.inputmask.min.js', ['jquery'], date("Ymd"), true );
 		wp_enqueue_script( 'ut-swiper', THEME_URI . '/js/swiper-slider-7/swiper-bundle.min.js', ['jquery'], date("Ymd"), true );
 		wp_enqueue_script( 'ut-faq-js', THEME_URI . '/js/faq.min.js', ['jquery'], date("Ymd"), true );
 		wp_enqueue_script( 'ut-scripts', THEME_URI . '/js/scripts.js', ['jquery'], date("Ymd"), true );

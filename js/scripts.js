@@ -61,12 +61,12 @@ jQuery(document).ready(function($) {
 		});
 		$(this).on('blur',function(){
 			var inputContent = $(this).val();
-			if(inputContent == ''){
+			if(inputContent == '' && $(this).attr('type') != 'tel'){
 				$(this).prev().removeClass('visible');
 			}
 		});
 
-		if ( $(this).hasClass('form-control') && $(this).val() != '' ) {
+		if ( $(this).hasClass('form-control') && $(this).val() != '' || $(this).attr('type') == 'tel' ) {
 			$(this).prev().addClass('visible');
 		}
 
