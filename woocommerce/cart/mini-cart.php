@@ -107,7 +107,7 @@ if ( ! WC()->cart->is_empty() ) :
             <?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 
             <div class="cart-popup-far">
-                <a class="cart-popup__link" href="<?php echo esc_url( wc_get_cart_url() ); ?>">
+                <a class="cart-popup__link" href="<?php echo esc_url( wc_get_checkout_url() ); ?>">
                     <div class="cart-popup-name">Оформить заказ</div>
                 </a>
                 <?php // do_action( 'woocommerce_widget_shopping_cart_buttons' ); ?>
@@ -123,7 +123,7 @@ if ( ! WC()->cart->is_empty() ) :
 
 <?php else : ?>
 
-    <div class="cart-popup <?php echo esc_attr( $args['list_class'] ); ?>">
+    <div class="cart-popup <?php echo esc_attr( $args['list_class'] ); ?>" style="display:none;">
         <div class="cart-popup-wrapper">
             <div class="cart-popup-sumfull">
                 <?php esc_html_e( 'No products in the cart.', 'woocommerce' ); ?>

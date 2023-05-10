@@ -34,7 +34,7 @@ class UT_Cart {
         // cart count
         ob_start();
         wc_get_template_part( 'cart/cart-count' );
-        $fragments['.cart-count'] = ob_get_clean();
+        $fragments['.cart-count-wrapper'] = ob_get_clean();
 
         return $fragments;
     }
