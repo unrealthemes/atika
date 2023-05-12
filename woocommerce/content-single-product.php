@@ -30,6 +30,10 @@ if ( post_password_required() ) {
 	echo get_the_password_form(); // WPCS: XSS ok.
 	return;
 }
+
+$price_txt = get_post_meta($product->get_id(), '_ut_price_txt', true);
+$part_txt = get_post_meta($product->get_id(), '_ut_part_txt', true);
+$package_txt = get_post_meta($product->get_id(), '_ut_package_txt', true);
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 
@@ -63,10 +67,19 @@ if ( post_password_required() ) {
 
                 <div class="p-group">
 
-                    <div class="p-desc">
-                        <p>Минимальная партия - 1 шт.</p>
-                        <p>В упаковке: 6 шт.</p>
-                    </div>
+                    <?php if ( $part_txt || $package_txt ) : ?>
+                        <div class="p-desc">
+                            
+                            <?php if ($part_txt) : ?>
+                                <p><?php echo esc_html($part_txt); ?></p>
+                            <?php endif; ?>
+                            
+                            <?php if ($package_txt) : ?>
+                                <p><?php echo esc_html($package_txt); ?></p>
+                            <?php endif; ?>
+
+                        </div>
+                    <?php endif; ?>
 
                     <?php
                     /**
@@ -87,7 +100,11 @@ if ( post_password_required() ) {
                 </div>
             </div>
 
-            <div class="p-text-var">Компания Атика занимается ОПТОВОЙ продажей, минимальная сумма заказа от 10000 руб.</div>
+            <?php if ($price_txt) : ?>
+                <div class="p-text-var">
+                    <?php echo nl2br($price_txt); ?>
+                </div>
+            <?php endif; ?>
 
         </div>
 

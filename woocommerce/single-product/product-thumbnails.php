@@ -36,16 +36,16 @@ $attachment_ids = $product->get_gallery_image_ids();
         <div class="swiper swiper-productImgMini">
             <div class="p-small-image-group swiper-wrapper">
 
-                <div class="p-small-image swiper-slide">
-                    <a href="<?php echo $post_thumbnail_src; ?>">
+                <div class="swiper-slide p-small-image-block">
+                    <a href="#" class="p-small-image-item">
                         <img src="<?php echo $post_thumbnail_src; ?>" alt="">
                     </a>
                 </div>
                 
                 <?php foreach ( $attachment_ids as $attachment_id ) : ?>
 
-                    <div class="p-small-image swiper-slide">
-                        <a href="<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>">
+                    <div class="p-small-image-block swiper-slide">
+                        <a href="#" class="p-small-image-item">
                             <img src="<?php echo wp_get_attachment_url( $attachment_id, 'full' ); ?>" alt="">
                         </a>
                     </div>

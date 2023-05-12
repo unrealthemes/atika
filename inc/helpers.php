@@ -302,7 +302,15 @@ function ut_breadcrumbs_change_elements( $elms, $class, $ptype ) {
 	global $post;
 	
 	$elms['home_after'] = [];
+
+	if ( isset($elms['single']['category__tax_crumbs']) ) {
+		$elms['single']['category__tax_crumbs'] = [];
+	}
 	
 	return $elms;
 }
 add_filter( 'kama_breadcrumbs_filter_elements', 'ut_breadcrumbs_change_elements', 10, 3 );
+
+
+
+add_filter( 'show_admin_bar', '__return_false' );

@@ -12,7 +12,7 @@ $copyright = get_field('copyright_f', 'option');
 
 		<?php get_template_part('template-parts/modals/contact-form'); ?>
 
-		<?php get_template_part('template-parts/modals/login-form'); ?>
+		<?php // get_template_part('template-parts/modals/login-form'); ?>
 
 		<footer class="footer">
 			<div class="footer-wrapper">

@@ -10,28 +10,35 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div class="main-section reviews">
+		<div class="container">
+			<main class="main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+				<?php do_action( 'echo_kama_breadcrumbs' ); ?>
 
-			get_template_part( 'template-parts/content', get_post_type() );
+				<div class="container-post">
 
-			the_post_navigation();
+					<?php the_title('<div class="reviews-title-1">', '</div>'); ?>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+					<?php
+					while ( have_posts() ) :
+						the_post();
 
-		endwhile; // End of the loop.
-		?>
+						the_content();
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+						// If comments are open or we have at least one comment, load up the comment template.
+						if ( comments_open() || get_comments_number() ) :
+							comments_template();
+						endif;
+
+					endwhile; // End of the loop.
+					?>
+
+				</div>
+
+			</main>
+		</div>
+	</div>
 
 <?php
-get_sidebar();
 get_footer();

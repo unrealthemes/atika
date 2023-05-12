@@ -93,72 +93,7 @@ $customer = WC()->session->get('customer');
                                     </div>
                                 </div>
 
-                                <!-- <div class="row cf7-send-wrapper">
-                                    <div class="col cf7-send">
-                                        <input class="form-control has-spinner wpcf7-submit" type="submit" value="Оформить заказ">
-                                        <span class="wpcf7-spinner"></span>
-                                    </div>
-                                </div> -->
-
-                                <?php 
-                                if ( $checkout->get_checkout_fields() ) : 
-                                //     $fields = $checkout->get_checkout_fields();
-                                ?>
-
-                                    <?php 
-                                    // foreach ($fields['billing'] as $key => $field) : 
-                                    //     $type = ( ! isset($field['type']) ) ? 'text' : $field['type'];
-                                    //     $required = ( $field['required'] ) ? 'required' : '';
-                                    //     if ($key == 'billing_country') continue;
-                                    ?>
-
-                                        <?php // if ($key != 'billing_address_1') : ?>
-                                            <!-- <div class="row cf7-name-group">
-                                                <div class="col">
-                                                    <span class="b-form-control-wrap" data-name="<?php //echo $key; ?>">
-                                                        <input  size="40" 
-                                                                class="form-control text" 
-                                                                placeholder="<?php //echo $field['label']; ?>" 
-                                                                value="" 
-                                                                type="<?php //echo esc_attr($type); ?>" 
-                                                                name="_<?php //echo esc_attr($key); ?>"
-                                                                <?php //echo esc_attr($required); ?>>
-                                                    </span>
-                                                </div>
-                                            </div> -->
-                                        <?php // else : ?>
-                                            <!-- <div class="row cf7-address-group">
-                                                <div class="col">
-                                                    <textarea name="_<?php //echo esc_attr($key); ?>" 
-                                                              id="_<?php //echo esc_attr($key); ?>" 
-                                                              cols="40" 
-                                                              rows="7" 
-                                                              class="form-control textarea" 
-                                                              placeholder="<?php //echo $field['label']; ?>"></textarea>
-                                                </div>
-                                            </div> -->
-                                        <?php // endif; ?>
-
-                                    <?php // endforeach; ?>
-
-                                    <!-- <div class="row cf7-message-wrapper">
-                                        <div class="col cf7-message">
-                                            <span class="b-form-control-wrap" data-name="order_comments">
-                                                <textarea cols="40" 
-                                                          rows="7" 
-                                                          class="form-control wpcf7-textarea" 
-                                                          aria-invalid="false" 
-                                                          placeholder="Комментарии к заказу" 
-                                                          name="order_comments"></textarea>
-                                            </span>
-                                        </div>
-                                    </div> -->
-
-                                    <?php 
-                                    // echo '<pre>';
-                                    // print_r( $checkout->get_checkout_fields() );
-                                    // echo '</pre>';
-                                    ?>
+                                <?php if ( $checkout->get_checkout_fields() ) : ?>
 
                                     <?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 

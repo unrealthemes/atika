@@ -381,7 +381,36 @@ a.form-control.has-spinner.wpcf7-submit {
 .catalog_m-image img {
     /* width: 55px; */
     height: 55px;
- }
+}
+
+.archive .woocommerce-notices-wrapper,
+.search-results .woocommerce-notices-wrapper {
+    display: none;
+}
+
+.single-product .desc-product ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.single-product .desc-product a {
+    line-height: 24px;
+    color: #fd8f37;
+}
+
+.page-template-template-account .woocommerce a {
+    line-height: 24px;
+    color: #fd8f37;
+}
+
+.page-template-template-account table.shop_table {
+    display: table !important;
+}
 
 /* .add_to_cart_button.ajax_add_to_cart.added {
 

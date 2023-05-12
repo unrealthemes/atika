@@ -403,10 +403,8 @@ new Swiper('.swiper-4', {
 });
 
 
+var swiper_mini = new Swiper('.swiper-productImgMini', {
 
-// Swiper Slider
-new Swiper('.swiper-productImgMini', {
-	// Navigation arrows
 	navigation: {
 		nextEl: '.swiper-productImgMini-n',
 		prevEl: '.swiper-productImgMini-p',
@@ -414,23 +412,19 @@ new Swiper('.swiper-productImgMini', {
 
 	pagination: {
 		el: '.swiper-pagination-productImgMini',
-		// Bullet
 		clickable: true,
 		dynamicBullets: true,
 	},
 
+	slidesPerView: 4, // Количество слайдов для показа 
+	slidesPerGroup: 1, // Количество пролистываемых слайдов
+	spaceBetween: 10, // Отступ между слайдами
+	// freeMode: true,
+	a11y: false,
+
 	direction: 'vertical',
 
-	/* Количество слайдов для показа */
-	slidesPerView: 4,
-	
-	/* Количество пролистываемых слайдов */
-	slidesPerGroup: 1,
-
-	/* Отступ между слайдами */
-	spaceBetween: 10,
-
-	loop: true,
+	// loop: true,
 	// effect: "fade",
 
 	// autoplay: {
@@ -470,6 +464,19 @@ new Swiper('.swiper-productImgMini', {
 		},
    },
 
+});
+
+var swiper_full = new Swiper(".swiper-productImg", {
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+
+	spaceBetween: 10,
+	// effect: "fade",
+	thumbs: {
+		swiper: swiper_mini,
+	},
 });
 
 
