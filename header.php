@@ -11,6 +11,15 @@ $shedules = get_field('shedules_h', 'option');
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo THEME_URI; ?>/img/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo THEME_URI; ?>/img/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo THEME_URI; ?>/img/favicons/favicon-16x16.png">
+	<link rel="manifest" href="<?php echo THEME_URI; ?>/img/favicons/site.webmanifest">
+	<link rel="mask-icon" href="<?php echo THEME_URI; ?>/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -227,6 +236,7 @@ $shedules = get_field('shedules_h', 'option');
 					<div class="m-cart">
 						<a class="cart__link" href="<?php echo esc_url( wc_get_checkout_url() ); ?>">
 							<img src="<?php echo THEME_URI; ?>/img/busket.png" alt="Cart">
+							<?php wc_get_template_part( 'cart/cart-count' ); ?>
 						</a>
 					</div>
 

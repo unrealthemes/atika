@@ -71,11 +71,11 @@ $package_txt = get_post_meta($product->get_id(), '_ut_package_txt', true);
                         <div class="p-desc">
                             
                             <?php if ($part_txt) : ?>
-                                <p><?php echo esc_html($part_txt); ?></p>
+                                <p>Минимальная партия - <?php echo esc_html($part_txt); ?> шт.</p>
                             <?php endif; ?>
                             
                             <?php if ($package_txt) : ?>
-                                <p><?php echo esc_html($package_txt); ?></p>
+                                <p>В упаковке: <?php echo esc_html($package_txt); ?> шт.</p>
                             <?php endif; ?>
 
                         </div>

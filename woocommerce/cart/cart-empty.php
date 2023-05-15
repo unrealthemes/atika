@@ -31,7 +31,7 @@ if ( wc_get_page_id( 'shop' ) > 0 ) :
 
                 <?php do_action( 'echo_kama_breadcrumbs' ); ?>
 
-                <div class="busket-catalog-list-flex">
+                <div class="busket-catalog-list-flex" style="margin: 0 0 452px;">
                     <?php // the_title('<div class="busket-title-1">','</div>'); ?>
 
                     <div class="busket-title-1">Ваша корзина пуста</div>
