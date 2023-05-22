@@ -17,6 +17,7 @@ $categories = get_terms(
                 <div class="catalog_m-block-wrapper">
 
                     <?php 
+                    $u = 0;
                     foreach ( $categories as $key => $category ) : 
                         $link = get_term_link( (int)$category->term_id, $category->taxonomy );
                         $thumbnail_id = get_term_meta( $category->term_id, 'thumbnail_id', true ); 
@@ -29,6 +30,14 @@ $categories = get_terms(
                             ]
                         );
                     ?>
+
+                        <?php if ( $u % 4 == 0 && $u > 3 ) : ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php if ( $u == 0 || $u % 4 == 0 ) : ?>
+                            <div class="catalog_m-col-wrapper">
+                        <?php endif; ?>
 
                         <div class="catalog_m-col">
                             <div class="catalog_m-image">
@@ -107,7 +116,11 @@ $categories = get_terms(
 
                         </div>
 
-                    <?php endforeach; ?>
+                        <?php if ( (count($categories) - 1) == $u ) : ?>
+                            </div>
+                        <?php endif; ?>
+
+                    <?php $u++; endforeach; ?>
 
                 </div>
             </div>
