@@ -56,22 +56,38 @@ jQuery(document).ready(function($) {
 		.popup-form input[type=password], 
 		.popup-form .inputwrapper span,
 		.popup-form textarea
-	`).each(function(e){
+	`).each(function(e) {
+
 		var placeholder = $(this).attr('placeholder');
 		$(this).wrap('<div class="inputwrapper"></div>').before('<span>'+placeholder+'</span>');
+
 		$(this).on('focus',function(){
 			var inputContent = $(this).val();
-			if(inputContent == ''){
+			
+			if ( $(this).hasClass('form-control') && inputContent != '' || $(this).attr('type') == 'tel' ) {
 				$(this).prev().addClass('visible');
 			}
-
 		});
+
+		$(this).on('keyup',function(){
+			var inputContent = $(this).val();
+
+			if ( inputContent != '' || $(this).attr('type') == 'tel' ) {
+				$(this).prev().addClass('visible');
+			}
+		});
+
 		$(this).on('blur',function(){
 			var inputContent = $(this).val();
-			if(inputContent == ''){
+
+			if(inputContent == '' && $(this).attr('type') != 'tel') {
 				$(this).prev().removeClass('visible');
 			}
 		});
+
+		if ( $(this).hasClass('form-control') && $(this).val() != '' || $(this).attr('type') == 'tel' ) {
+			$(this).prev().addClass('visible');
+		}
 	});
 
 	/* Модальное окно открытие / закрытие */
