@@ -1,6 +1,6 @@
 {
     "key": "group_6448edfa9b842",
-    "title": "Настройки шоблона Главная",
+    "title": "Настройки шaблона Главная",
     "fields": [
         {
             "key": "field_6448edfb9ae44",
@@ -88,46 +88,72 @@
             ]
         },
         {
-            "key": "field_6448eebe9ae48",
-            "label": "Изображение (справа вверху)",
-            "name": "img_id_top_h",
+            "key": "field_646b7c6c18a0b",
+            "label": "Слайдер (справа вверху)",
+            "name": "slider_top_h",
             "aria-label": "",
-            "type": "image",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "25",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
-            "return_format": "id",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
-        },
-        {
-            "key": "field_6448f30d9ae4a",
-            "label": "Ссылка изображения (справа вверху)",
-            "name": "link_top_h",
-            "aria-label": "",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Добавить слайд",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_646b7c6c18a0c",
+                    "label": "Изображение",
+                    "name": "img_id_slider_top_h",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "",
+                    "library": "",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium",
+                    "parent_repeater": "field_646b7c6c18a0b"
+                },
+                {
+                    "key": "field_646b7c6c18a0d",
+                    "label": "Ссылка",
+                    "name": "link_slider_top_h",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "70",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_646b7c6c18a0b"
+                }
+            ]
         },
         {
             "key": "field_6448f424dcc94",
@@ -148,46 +174,72 @@
             "esc_html": 0
         },
         {
-            "key": "field_6448f2f49ae49",
-            "label": "Изображение (справа снизу)",
-            "name": "img_id_bottom_h",
+            "key": "field_646b7cbb18a0e",
+            "label": "Слайдер (справа снизу)",
+            "name": "slider_bottom_h",
             "aria-label": "",
-            "type": "image",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "25",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
-            "return_format": "id",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
-        },
-        {
-            "key": "field_6448f3309ae4b",
-            "label": "Ссылка изображения (справа снизу)",
-            "name": "link_bottom_h",
-            "aria-label": "",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Добавить слайд",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_646b7cbb18a0f",
+                    "label": "Изображение",
+                    "name": "img_id_slider_bottom_h",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium",
+                    "parent_repeater": "field_646b7cbb18a0e"
+                },
+                {
+                    "key": "field_646b7cbb18a10",
+                    "label": "Ссылка",
+                    "name": "link_slider_bottom_h",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "70",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_646b7cbb18a0e"
+                }
+            ]
         },
         {
             "key": "field_6448f75dffe13",
@@ -394,5 +446,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682508884
+    "modified": 1684765945
 }

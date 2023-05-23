@@ -1,6 +1,6 @@
 {
     "key": "group_6447e80cd0d55",
-    "title": "Настройки шоблона Контакты",
+    "title": "Настройки шaблона Контакты",
     "fields": [
         {
             "key": "field_6447e80ef882a",
@@ -184,6 +184,7 @@
                     "collapsed": "",
                     "button_label": "Добавить",
                     "rows_per_page": 20,
+                    "parent_repeater": "field_6447f5ba4772e",
                     "sub_fields": [
                         {
                             "key": "field_6459f12d44dd5",
@@ -229,8 +230,7 @@
                             "placeholder": "",
                             "parent_repeater": "field_6459f0cb44dd4"
                         }
-                    ],
-                    "parent_repeater": "field_6447f5ba4772e"
+                    ]
                 }
             ]
         },
@@ -417,5 +417,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683616152
+    "modified": 1684765155
 }

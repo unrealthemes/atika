@@ -1,6 +1,6 @@
 {
     "key": "group_64480088f3e2b",
-    "title": "Настройки шоблона Условия работы",
+    "title": "Настройки шaблона Условия работы",
     "fields": [
         {
             "key": "field_64480089d925a",
@@ -157,5 +157,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682443279
+    "modified": 1684765173
 }

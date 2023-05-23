@@ -64,8 +64,14 @@ do_action( 'woocommerce_before_main_content' );
                                 foreach ($categories as $category) : 
                                     $term_link = get_term_link($category->term_id, $category->taxonomy);
                                     $child_categories = get_terms( $category->taxonomy, [ 'parent' => $category->term_id, 'orderby' => 'slug', 'hide_empty' => 0 ] );
+                                    $class = ($child_categories) ? 'catalog-item-has-children' : '';
                                 ?>
-                                    <li>
+                                    <li class="catalog-item <?php echo $class; ?>">
+
+                                        <?php if ( $child_categories ) : ?>
+                                            <div class="ic"></div>
+                                        <?php endif; ?>
+
                                         <a href="<?php echo esc_url($term_link); ?>">
                                             <?php echo esc_html($category->name); ?>
                                         </a>
@@ -75,12 +81,12 @@ do_action( 'woocommerce_before_main_content' );
 
                                                 <?php 
                                                 foreach ($child_categories as $child_category) : 
-                                                    // $child_term_link = get_term_link($child_category->term_id, $child_category->taxonomy);
+                                                    $child_term_link = get_term_link($child_category->term_id, $child_category->taxonomy);
                                                 ?>
                                                     <li class="catalog-list-inner">
-                                                        <!-- <a href="<?php // echo esc_url($child_term_link); ?>"> -->
+                                                        <a href="<?php echo esc_url($child_term_link); ?>">
                                                             <?php echo esc_html($child_category->name); ?>
-                                                        <!-- </a> -->
+                                                        </a>
                                                     </li>
                                                 <?php endforeach; ?>
 

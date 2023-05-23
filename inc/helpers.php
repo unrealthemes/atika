@@ -102,6 +102,7 @@ function ut_acf_json_save_point( $path ) {
     return $path; 
 }
 add_filter('acf/settings/save_json', 'ut_acf_json_save_point');
+add_filter('acf/settings/show_admin', '__return_false');
 
 
 /**

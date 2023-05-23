@@ -421,3 +421,7 @@ a.form-control.has-spinner.wpcf7-submit {
     top: -8px;
     right: -28px;
 }
+
+.catalog-item-has-children  .catalog-list-sub li a {
+    font-weight: 400;
+}
