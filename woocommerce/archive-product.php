@@ -28,6 +28,7 @@ $categories = get_terms( 'product_cat', [
     'orderby' => 'name',
     'order' => 'ASC',
     'hide_empty' => 0,
+    'parent' => 0,
 ] ); 
 
 /**
@@ -63,7 +64,14 @@ do_action( 'woocommerce_before_main_content' );
                                 <?php 
                                 foreach ($categories as $category) : 
                                     $term_link = get_term_link($category->term_id, $category->taxonomy);
-                                    $child_categories = get_terms( $category->taxonomy, [ 'parent' => $category->term_id, 'orderby' => 'slug', 'hide_empty' => 0 ] );
+                                    $child_categories = get_terms( 
+                                        $category->taxonomy, 
+                                        [ 
+                                            'child_of' => $category->term_id, 
+                                            'orderby' => 'slug', 
+                                            'hide_empty' => 0 
+                                        ] 
+                                    );
                                     $class = ($child_categories) ? 'catalog-item-has-children' : '';
                                 ?>
                                     <li class="catalog-item <?php echo $class; ?>">
@@ -156,7 +164,7 @@ else :
     $child_categories = get_terms( 
         $parent_category->taxonomy, 
         [ 
-            'parent' => $parent_category->term_id, 
+            'child_of' => $parent_category->term_id, 
             'orderby' => 'slug', 
             'hide_empty' => 0 
         ] 
@@ -210,55 +218,6 @@ else :
                         <?php endif; ?> 
 
                         <?php do_action( 'ut_main_filter_options' ); ?>
-
-                        <!-- <div class="catalog-filter">
-                            <div class="catalog-filter-title">Цена (руб.)</div>
-
-                            <div class="catalog-input-flex">
-                                <input type="text" placeholder="От 2">
-                                <input type="text" placeholder="До 999999">
-                            </div>
-
-                            <div class="price-field">
-                                <input type="range" min="100" max="500" value="100" id="lower">
-                                <input type="range" min="100" max="500" value="500" id="upper">
-                            </div>
-
-                            <div class="catalog-filter-flex">
-                                <div class="catalog-filter-title">Бренд</div>
-                                <div class="catalog-filter-all">Все ></div>
-                            </div>
-
-                            <ul class="catalog-filter-list">
-
-                                <li class="catalog-filter-li">
-                                    <input id="licota" type="checkbox">
-                                    <label for="licota" class="catalog-filter-label">Licota</label>
-                                </li>
-
-                                <li class="catalog-filter-li">
-                                    <input id="garwin-pro" type="checkbox">
-                                    <label for="garwin-pro" class="catalog-filter-label">Garwin Pro</label>
-                                </li>
-
-                                <li class="catalog-filter-li">
-                                    <input id="autodelo" type="checkbox">
-                                    <label for="autodelo" class="catalog-filter-label">АвтоDeло</label>
-                                </li>
-
-                                <li class="catalog-filter-li">
-                                    <input id="yato" type="checkbox">
-                                    <label for="yato" class="catalog-filter-label">YATO</label>
-                                </li>
-
-                                <li class="catalog-filter-li">
-                                    <input id="cobalt" type="checkbox">
-                                    <label for="cobalt" class="catalog-filter-label">КОБАЛЬТ</label>
-                                </li>
-
-                            </ul>
-
-                        </div> -->
 
                     </div>
 

@@ -20,6 +20,7 @@ class UT_Theme_Helper {
 
   	private function __construct() {
 
+		add_action( 'admin_init', [ $this, 'new_role' ] );
   	}
 
   	protected function __clone() {
@@ -46,6 +47,42 @@ class UT_Theme_Helper {
 
 		return $this;
 	}
+
+	public function new_role() {  
+ 
+        //add the new user role
+        add_role(
+            'group_1',
+            'Группа 1',
+            [
+                'read' => true,
+            ]
+        );
+
+        add_role(
+            'group_2',
+            'Группа 2',
+            [
+                'read' => true,
+            ]
+        );
+
+        add_role(
+            'group_3',
+            'Группа 3',
+            [
+                'read' => true,
+            ]
+        );
+
+        add_role(
+            'group_4',
+            'Группа 4',
+            [
+                'read' => true,
+            ]
+        );
+    }
 
 	function load_classes() {
 

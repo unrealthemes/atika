@@ -29,13 +29,11 @@ $post_thumbnail_src = ( $post_thumbnail_id ) ? wp_get_attachment_url( $post_thum
 $attachment_ids = $product->get_gallery_image_ids();
 ?>
 
-<div class="swiper-rel">
+<?php if ( $attachment_ids ) : ?>
 
-    <?php if ( $attachment_ids ) : ?>
-        
+    <div class="swiper-rel">
         <div class="swiper swiper-productImgMini">
             <div class="p-small-image-group swiper-wrapper">
-
                 <div class="swiper-slide p-small-image-block">
                     <a href="#" class="p-small-image-item">
                         <img src="<?php echo $post_thumbnail_src; ?>" alt="">
@@ -54,12 +52,10 @@ $attachment_ids = $product->get_gallery_image_ids();
 
             </div>
         </div>
-
-    <?php endif; ?>
-
-    <div class="swiper-button-block">
-        <div class="swiper-button-prev swiper-productImgMini-p swiper-productImgMini-pn"></div>
-        <div class="swiper-button-next swiper-productImgMini-n swiper-productImgMini-pn"></div>
+        <div class="swiper-button-block">
+            <div class="swiper-button-prev swiper-productImgMini-p swiper-productImgMini-pn"></div>
+            <div class="swiper-button-next swiper-productImgMini-n swiper-productImgMini-pn"></div>
+        </div>
     </div>
 
-</div>
+<?php endif; ?>
