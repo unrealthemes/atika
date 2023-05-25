@@ -425,3 +425,29 @@ a.form-control.has-spinner.wpcf7-submit {
 .catalog-item-has-children  .catalog-list-sub li a {
     font-weight: 400;
 }
+
+.woocommerce-remove-coupon {
+    display: none;
+}
+
+.popup-block .wpcf7-submit {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    padding: 16px !important;
+    background: #f0f0f0;
+    border: 1px solid #21283566 !important;
+    border: 1px solid #ccd0d7 !important;
+    border-radius: 3px !important;
+    box-shadow: none !important;
+    width: 100%;
+    display: block;
+    outline: none;
+}
+
+.popup-block .wpcf7-submit:hover {
+    background: #dedede;
+}
+
+.grecaptcha-badge {
+    bottom: 100px !important;
+}

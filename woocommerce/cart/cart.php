@@ -200,6 +200,69 @@ $count_products = WC()->cart->get_cart_contents_count();
                         $count_position_txt = ut_num_decline( $count_position, [ 'позиция', 'позиции', 'позиций' ] );
                         $count_products_txt = ut_num_decline( $count_products, [ 'товар', 'товара', 'товаров' ] );
                         ?>
+
+                        <div class="busket-full-price">
+
+                            <?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
+                                <div class="cart-results__item">
+                                    <span class="text color-mono-64">
+                                        <?php wc_cart_totals_coupon_label( $coupon ); ?>
+                                    </span>
+                                    <span class="text">
+                                        <?php wc_cart_totals_coupon_html( $coupon ); ?>
+                                    </span>
+                                </div>
+                            <?php endforeach; ?>
+
+                            <?php foreach ( WC()->cart->get_fees() as $fee ) : ?>
+                                <div class="cart-results__item">
+                                    <span class="text color-mono-64">
+                                        <?php echo esc_html( $fee->name ); ?>
+                                    </span>
+                                    <span class="text">
+                                        <?php wc_cart_totals_fee_html( $fee ); ?>
+                                    </span>
+                                </div>
+                            <?php endforeach; ?>
+
+                            <?php
+                            if ( wc_tax_enabled() && ! WC()->cart->display_prices_including_tax() ) {
+                                $taxable_address = WC()->customer->get_taxable_address();
+                                $estimated_text  = '';
+
+                                if ( WC()->customer->is_customer_outside_base() && ! WC()->customer->has_calculated_shipping() ) {
+                                    $estimated_text = sprintf( ' <small>' . esc_html__( '(estimated for %s)', 'woocommerce' ) . '</small>', WC()->countries->estimated_for_prefix( $taxable_address[0] ) . WC()->countries->countries[ $taxable_address[0] ] );
+                                }
+
+                                if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) ) {
+                                    foreach ( WC()->cart->get_tax_totals() as $code => $tax ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+                                        ?>
+                                        <div class="cart-results__item">
+                                            <span class="text color-mono-64">
+                                                <?php echo esc_html( $tax->label ) . $estimated_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+                                            </span>
+                                            <span class="text">
+                                                <?php echo wp_kses_post( $tax->formatted_amount ); ?>
+                                            </span>
+                                        </div>
+                                        <?php
+                                    }
+                                } else {
+                                    ?>
+                                    <div class="cart-results__item">
+                                        <span class="text color-mono-64">
+                                            <?php echo esc_html( WC()->countries->tax_or_vat() ) . $estimated_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+                                        </span>
+                                        <span class="text">
+                                            <?php wc_cart_totals_taxes_total_html(); ?>
+                                        </span>
+                                    </div>
+                                    <?php
+                                }
+                            }
+                            ?>
+                        </div>
+
                         <div class="busket-full-price">
                             Итого: <?php echo $count_position_txt; ?>, <?php echo $count_products_txt; ?> на: <?php wc_cart_totals_order_total_html(); ?>
                         </div>

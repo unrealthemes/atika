@@ -315,3 +315,10 @@ add_filter( 'kama_breadcrumbs_filter_elements', 'ut_breadcrumbs_change_elements'
 
 
 add_filter( 'show_admin_bar', '__return_false' );
+
+
+
+function ut_version_remove_version() {
+	return '';
+}
+add_filter('the_generator', 'ut_version_remove_version');
