@@ -20,17 +20,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $product;
+
+$add_to_cart_text = ( $product->is_in_stock() ) ? $product->add_to_cart_text() : 'Скоро в продаже';
+$style_wrapp = ( ! $product->is_in_stock() && is_single() ) ? 'style="width: 135px; margin: 0 auto;"' : '';
+$style = ( $product->is_in_stock() ) ? '' : 'style="width: 135px; margin: 0 auto;"';
 ?>
 
-<div class="group-1">
-    <div class="newp-cart-d">
-        <div class="number-input p-col">
-            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
-            <input class="quantity" min="1" name="quantity" value="1" type="number">
-            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+<div class="group-1" <?php echo $style_wrapp; ?>>
+
+    <?php if ( $product->is_in_stock() ) : ?>
+        <div class="newp-cart-d">
+            <div class="number-input p-col">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                <input class="quantity" min="1" name="quantity" value="1" type="number">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+            </div>
         </div>
-    </div>
-    <div class="newp-cart">
+    <?php endif; ?>
+
+    <div class="newp-cart" <?php echo $style; ?>>
         <?php
         echo apply_filters(
             'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
@@ -43,7 +51,7 @@ global $product;
                 esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
                 esc_attr( isset( $args['class'] ) ? $args['class'] : 'button' ),
                 isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
-                esc_html( $product->add_to_cart_text() )
+                esc_html( $add_to_cart_text )
             ),
             $product,
             $args

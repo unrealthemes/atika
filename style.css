@@ -422,9 +422,9 @@ a.form-control.has-spinner.wpcf7-submit {
     right: -28px;
 }
 
-.catalog-item-has-children  .catalog-list-sub li a {
+/* .catalog-item-has-children  .catalog-list-sub li a {
     font-weight: 400;
-}
+} */
 
 .woocommerce-remove-coupon {
     display: none;
@@ -450,4 +450,44 @@ a.form-control.has-spinner.wpcf7-submit {
 
 .grecaptcha-badge {
     bottom: 100px !important;
+}
+
+.product_type_simple:not(.add_to_cart_button) {
+    background: #feb173;
+}
+
+.product_type_simple:not(.add_to_cart_button) img {
+    display: none;
+}
+
+body .woo-login-popup-sc-modal .woo-login-popup-sc-bg {
+    display: none!important;
+}
+
+body .woo-login-popup-sc-modal .woo-login-popup-sc-left {
+    padding: 0!important;
+}
+
+body .woo-login-popup-sc-modal.woo-login-popup-sc-modal-off {
+    border: none!important;
+    margin: 10px 0!important;
+}
+
+body .woo-login-popup-sc-modal .woocommerce-LostPassword,
+body .woo-login-popup-sc-modal .woocommerce-plogin {
+    margin: 40px 0px 0px 0px!important;
+    text-align: center!important;
+}
+
+.woocommerce-privacy-policy-link {
+    color: #fd8f37;
+}
+
+.woocommerce-privacy-policy-text {
+    margin-bottom: 20px;
+}
+
+.user-profile,
+.user-profile__link:hover {
+    cursor: pointer;
 }

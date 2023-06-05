@@ -163,14 +163,21 @@ $shedules = get_field('shedules_h', 'option');
 								<?php wc_get_template_part( 'cart/mini-cart' ); ?>
 							</div>
 
-							<?php // if ( ! is_user_logged_in() ) : ?>
+							<?php if ( ! is_user_logged_in() ) : ?>
+								<div class="user-profile">
+									<div class="user-profile__link">
+										<img src="<?php echo THEME_URI; ?>/img/enter_s.png" alt="<?php _e('My Account',''); ?>">
+										<span>Вход</span>
+									</div>
+								</div>
+							<?php else : ?>
 								<div class="user-profile">
 									<a class="user-profile__link" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
 										<img src="<?php echo THEME_URI; ?>/img/enter_s.png" alt="<?php _e('My Account',''); ?>">
-										<span>Вход</span>
+										<span>Аккаунт</span>
 									</a>
 								</div>
-							<?php // endif; ?>
+							<?php endif; ?>
 
 						</div>
 
@@ -240,11 +247,19 @@ $shedules = get_field('shedules_h', 'option');
 						</a>
 					</div>
 
-					<div class="m-user-profile">
-						<a class="user-profile__link" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
-							<img src="<?php echo THEME_URI; ?>/img/enter.png" alt="<?php _e('My Account',''); ?>">
-						</a>
-					</div>
+					<?php if ( ! is_user_logged_in() ) : ?>
+						<div class="user-profile m-user-profile">
+							<div class="user-profile__link">
+								<img src="<?php echo THEME_URI; ?>/img/enter.png" alt="<?php _e('My Account',''); ?>">
+							</div>
+						</div>
+					<?php else : ?>
+						<div class="m-user-profile">
+							<a class="user-profile__link" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
+								<img src="<?php echo THEME_URI; ?>/img/enter.png" alt="<?php _e('My Account',''); ?>">
+							</a>
+						</div>
+					<?php endif; ?>
 
 				</div>
 			</div>
